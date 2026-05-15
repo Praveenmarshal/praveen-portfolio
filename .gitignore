@@ -37,3 +37,6 @@ logs/
 
 # Node (if any tooling)
 node_modules/
+
+# Large files — upload manually via GitHub web UI
+static/resume/*.pdf

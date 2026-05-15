@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>404 — Page Not Found | Praveen K</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=DM+Sans:wght@400;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+<style>
+.error-page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;position:relative;z-index:10}
+.error-code{font-family:'Cormorant Garamond',serif;font-size:clamp(6rem,20vw,14rem);font-weight:700;line-height:1;background:var(--gradient-1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.25;position:absolute;top:50%;transform:translateY(-60%);pointer-events:none;user-select:none}
+.error-content{position:relative;z-index:2}
+.error-emoji{font-size:4rem;margin-bottom:24px;animation:wobble 3s ease-in-out infinite}
+.error-title{font-family:'Cormorant Garamond',serif;font-size:2.5rem;margin-bottom:12px;background:var(--gradient-1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.error-desc{color:var(--text-secondary);font-size:1rem;line-height:1.7;max-width:500px;margin:0 auto 40px}
+.error-mono{font-family:'DM Mono',monospace;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:10px;padding:14px 24px;font-size:.8rem;color:var(--accent);margin-bottom:32px;display:inline-block}
+</style>
+</head>
+<body data-theme="dark">
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<canvas id="bgCanvas"></canvas>
+
+<div class="error-page">
+  <div class="error-code" aria-hidden="true">404</div>
+  <div class="error-content">
+    <div class="error-emoji">🔍</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-desc">This page seems to have vanished into the data void. Let's navigate back to something real.</p>
+    <div class="error-mono">SELECT * FROM pages WHERE url = '{{ request.path }}' → 0 rows</div>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="/" class="btn btn-primary">← Back to Portfolio</a>
+      <a href="/#contact" class="btn btn-secondary">Contact Me</a>
+    </div>
+  </div>
+</div>
+
+<script src="/static/js/main.js" defer></script>
+</body>
+</html>
